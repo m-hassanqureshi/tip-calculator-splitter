@@ -18,7 +18,7 @@ Ensure you have **Node.js** (version 18.0.0 or higher) and **npm** installed.
 #### Running Locally
 1. Navigate to the project root directory:
    ```bash
-   cd "Dev weekend Assesment"
+   cd tip-calculator-splitter
    ```
 2. Install the required dependencies:
    ```bash

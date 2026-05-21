@@ -15,10 +15,13 @@ npm install && npm run dev
 ```
 
 ### Step-by-Step Instructions
-1. **Clone or download the project** to your local machine.
-2. **Open a terminal** in the project directory:
+1. **Clone the repository**:
    ```bash
-   cd "Dev weekend Assesment"
+   git clone https://github.com/m-hassanqureshi/tip-calculator-splitter.git
+   ```
+2. **Navigate into the project directory**:
+   ```bash
+   cd tip-calculator-splitter
    ```
 3. **Run the installation and startup command**:
    ```bash
@@ -33,7 +36,7 @@ npm install && npm run dev
 - **Live Real-time Updates**: Calculations update instantly on every keystroke with no "Calculate" button.
 - **Defensive Input Handling**: Replaces native numeric input bugs with custom character sanitization on type/paste, preventing negative numbers or non-numeric garbage inputs.
 - **Dynamic Font Resizing**: Displays scale down dynamically if numbers get too large, preventing layout breakage.
-- **Currency Switcher**: Calculate splits in US Dollars (`$`), Euros (`€`), British Pounds (`£`), or Indian Rupees (`₹`).
+- **Currency Switcher**: Calculate splits in Pakistani Rupees (`₨`), Euros (`€`), or US Dollars (`$`).
 - **Inline Validation Alerts**: Soft sliding error messages communicate validation alerts immediately near the input field.
 - **Accurate Ceil Rounding**: Rounding policies are designed to split fractions up to the nearest cent, ensuring bills are never underpaid.
 - **Full Accessibility**: Semantic HTML5 layout, clear keyboard focus indicators, screen reader attributes (`role="alert"`, `aria-live`, `aria-describedby`), and virtual keyboard overrides on mobile.

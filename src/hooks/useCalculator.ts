@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 
-export type Currency = 'USD' | 'EUR' | 'GBP' | 'INR';
+export type Currency = 'PKR' | 'EUR' | 'USD';
 
 export interface CurrencyConfig {
   symbol: string;
@@ -9,10 +9,9 @@ export interface CurrencyConfig {
 }
 
 export const CURRENCIES: Record<Currency, CurrencyConfig> = {
-  USD: { symbol: '$', label: 'USD', name: 'US Dollar' },
+  PKR: { symbol: '₨', label: 'PKR', name: 'Pakistani Rupee' },
   EUR: { symbol: '€', label: 'EUR', name: 'Euro' },
-  GBP: { symbol: '£', label: 'GBP', name: 'British Pound' },
-  INR: { symbol: '₹', label: 'INR', name: 'Indian Rupee' },
+  USD: { symbol: '$', label: 'USD', name: 'US Dollar' },
 };
 
 export interface CalculatorState {
