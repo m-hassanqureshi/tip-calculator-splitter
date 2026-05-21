@@ -159,9 +159,36 @@ export const useCalculator = () => {
     
     // Base bill per person is computed as the total share minus tip share,
     // which remains fully consistent: perPersonBill + perPersonTip = perPersonTotal
+    const perPersonBill = Math.max(0, perPersonTotal - perPersonTip);
+
+    return {
+      totalTip,
+      grandTotal,
+      perPersonBill,
+      perPersonTip,
+      perPersonTotal,
+    };
+  }, [state.bill, state.tipPercent, state.people, errors]);
+
+  // Determine if reset button should be active (enabled if any field is populated)
+  const isResetEnabled = useMemo(() => {
+    return (
+      state.bill !== '' ||
+      state.tipPercent !== '' ||
+      state.people !== '' ||
+      state.activePreset !== null
+    );
+  }, [state.bill, state.tipPercent, state.people, state.activePreset]);
+
   return {
     state,
     errors,
     outputs,
+    isResetEnabled,
+    setBill,
+    setTipPercent,
+    setPeople,
+    setCurrency,
+    reset,
   };
 };
