@@ -66,6 +66,20 @@ export const useCalculator = () => {
   };
 
   const setCurrency = (curr: Currency) => {
+    setState((prev) => ({ ...prev, currency: curr }));
+  };
+
+  const reset = () => {
+    setState(DEFAULT_STATE);
+  };
+
+  // Perform inline validation
+  const errors = useMemo<ValidationErrors>(() => {
+    const errs: ValidationErrors = {};
+
+    // Validate Bill
+    }
+
     return errs;
   }, [state.bill, state.tipPercent, state.people]);
 
