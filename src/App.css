@@ -178,3 +178,381 @@
   left: 1rem;
   color: var(--clr-text-muted);
   font-size: var(--fs-lg);
+  font-weight: 500;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-clear-btn {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--clr-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  border-radius: 50%;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.input-clear-btn:hover {
+  color: var(--clr-text-main);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Align clear button and text alignment in inputs */
+.custom-input:focus ~ .input-clear-btn,
+.custom-input:hover ~ .input-clear-btn {
+  opacity: 1;
+}
+
+.custom-input {
+  /* Give space on the right for clear button */
+  padding-right: 2.5rem;
+}
+
+/* Error States */
+.input-field-wrapper.has-error .custom-input {
+  border-color: var(--clr-error);
+}
+
+.input-field-wrapper.has-error .custom-input:focus {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
+}
+
+.input-field-wrapper.has-error .input-icon {
+  color: var(--clr-error);
+}
+
+/* Tip Presets Layout */
+.tip-preset-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.tip-btn {
+  background: var(--clr-btn-bg);
+  border: 1px solid var(--clr-input-border);
+  border-radius: var(--radius-md);
+  color: var(--clr-primary);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  padding: 0.75rem 0.5rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tip-btn:hover {
+  background: var(--clr-btn-hover);
+  border-color: var(--clr-primary);
+  transform: translateY(-1px);
+}
+
+.tip-btn:active {
+  transform: translateY(0);
+}
+
+.tip-btn.active {
+  background: var(--clr-primary);
+  border-color: var(--clr-primary);
+  color: var(--clr-bg);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Custom Tip Field in Grid */
+.custom-tip-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--clr-input-border);
+  background: var(--clr-input-bg);
+  transition: all var(--transition-fast);
+}
+
+.custom-tip-container:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.custom-tip-container.active {
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 4px var(--clr-input-focus-glow);
+}
+
+.custom-tip-input-field {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: var(--clr-text-main);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  padding: 0.75rem 1.75rem 0.75rem 0.5rem;
+  text-align: right;
+}
+
+.custom-tip-input-field:focus {
+  outline: none;
+}
+
+.custom-tip-suffix {
+  position: absolute;
+  right: 0.5rem;
+  color: var(--clr-text-muted);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  pointer-events: none;
+}
+
+/* Display (Output) Panel */
+.display-panel {
+  background: var(--clr-output-card-bg);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.5rem;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.display-outputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.display-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.display-label-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-title {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--clr-text-main);
+}
+
+.display-subtitle {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--clr-text-muted);
+}
+
+.display-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  color: var(--clr-primary);
+  font-family: var(--ff-primary);
+  font-weight: 800;
+  text-align: right;
+  letter-spacing: -0.02em;
+  word-break: break-all;
+}
+
+/* Dynamic Font Sizes to Prevent Breakage */
+.text-lg-val {
+  font-size: var(--fs-xxl);
+}
+.text-md-val {
+  font-size: var(--fs-xl);
+}
+.text-sm-val {
+  font-size: var(--fs-lg);
+}
+.text-xs-val {
+  font-size: var(--fs-md);
+}
+
+.val-symbol {
+  font-size: 0.6em;
+  font-weight: 600;
+  margin-right: 0.15em;
+}
+
+.display-separator {
+  height: 1px;
+  background: rgba(16, 185, 129, 0.1);
+  margin: 0.25rem 0;
+}
+
+/* Secondary & Highlighted Display Output Rows */
+.display-row.secondary-row .display-title {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+.display-row.secondary-row .display-value {
+  color: rgba(16, 185, 129, 0.85);
+}
+
+.display-row.highlighted-row {
+  background: rgba(16, 185, 129, 0.06);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px dashed rgba(16, 185, 129, 0.2);
+  margin-top: 0.25rem;
+}
+
+.highlight-title {
+  color: #fff;
+  font-size: var(--fs-md);
+}
+
+.highlight-subtitle {
+  color: var(--clr-primary);
+}
+
+.highlight-val {
+  color: var(--clr-primary);
+  font-size: calc(var(--fs-xxl) * 1.15) !important;
+  text-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+}
+
+/* Reset Button */
+.reset-btn {
+  width: 100%;
+  background: var(--clr-primary);
+  color: var(--clr-bg);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-md);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2);
+}
+
+.reset-btn:hover:not(:disabled) {
+  background: #34d399; /* Bright Emerald */
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+  transform: translateY(-2px);
+}
+
+.reset-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.reset-btn:disabled {
+  background: rgba(16, 185, 129, 0.15);
+  color: rgba(16, 185, 129, 0.3);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Footer Section */
+.app-footer {
+  text-align: center;
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.25);
+  margin-top: 1rem;
+}
+
+.app-footer a {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.app-footer a:hover {
+  color: var(--clr-primary);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Layout Media Queries */
+
+/* Tablet & Mobile Layout breakpoint */
+@media (max-width: 780px) {
+  .calculator-card {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .calculator-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+  
+  .display-panel {
+    gap: 2rem;
+    padding: 1.75rem 1.5rem;
+  }
+  
+  .tip-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  #root {
+    padding: 1rem;
+  }
+  
+  .calculator-card {
+    padding: 1.25rem;
+    gap: 1.5rem;
+    border-radius: var(--radius-md);
+  }
+  
+  .tip-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on very narrow screens for better tap targets */
+  }
+  
+  .custom-tip-container {
+    grid-column: span 2; /* Custom stretches full width on small layout */
+  }
+
+  .display-panel {
+    padding: 1.25rem 1rem;
+  }
+
+  .highlight-val {
+    font-size: var(--fs-xxl) !important; /* Cap highlight value font size slightly */
+  }
+}
