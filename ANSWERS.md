@@ -8,6 +8,10 @@ This file contains answers to the five questions regarding the development, desi
 
 Follow these steps to run the project locally on a fresh machine.
 
+#### Live Deployment
+The application is deployed on GitHub Pages and can be accessed at:
+[https://m-hassanqureshi.github.io/tip-calculator-splitter/](https://m-hassanqureshi.github.io/tip-calculator-splitter/)
+
 #### Prerequisites
 Ensure you have **Node.js** (version 18.0.0 or higher) and **npm** installed.
 

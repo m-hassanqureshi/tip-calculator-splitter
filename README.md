@@ -2,6 +2,8 @@
 
 SplitWisely is a premium, real-time, responsive Tip Calculator and Bill Splitter web application built with React, TypeScript, Vite, and Vanilla CSS. It provides live updates as you type, currency settings, inline validation, and keyboard-accessible navigation.
 
+**Live Deployed Demo**: [m-hassanqureshi.github.io/tip-calculator-splitter/](https://m-hassanqureshi.github.io/tip-calculator-splitter/)
+
 ---
 
 ## How to Run Locally
