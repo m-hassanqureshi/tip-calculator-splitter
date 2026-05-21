@@ -28,3 +28,27 @@ export interface ValidationErrors {
   tipPercent?: string;
   people?: string;
 }
+
+export interface CalculatorOutputs {
+  totalTip: number;
+  grandTotal: number;
+  perPersonBill: number;
+  perPersonTip: number;
+  perPersonTotal: number;
+}
+
+const DEFAULT_STATE: CalculatorState = {
+  bill: '',
+  tipPercent: '',
+  people: '',
+  currency: 'USD',
+  activePreset: null,
+};
+
+export const useCalculator = () => {
+  const [state, setState] = useState<CalculatorState>(DEFAULT_STATE);
+
+  return {
+    state,
+  };
+};
