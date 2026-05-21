@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Colors */
+  --clr-bg: #090d16;
+  --clr-bg-gradient: radial-gradient(circle at 50% 0%, #152238 0%, #090d16 100%);
+  --clr-card-bg: rgba(17, 25, 40, 0.75);
+  --clr-card-border: rgba(255, 255, 255, 0.08);
+  
+  --clr-primary: #10b981; /* Emerald 500 */
+  --clr-primary-hover: #059669; /* Emerald 600 */
+  --clr-primary-active: #047857; /* Emerald 700 */
+  --clr-primary-light: rgba(16, 185, 129, 0.15);
+  
+  --clr-text-main: #f3f4f6; /* Slate 100 */
+  --clr-text-muted: #9ca3af; /* Slate 400 */
+  --clr-text-dark: #1f2937; /* Slate 800 */
+  
+  --clr-input-bg: rgba(30, 41, 59, 0.5);
+  --clr-input-border: rgba(255, 255, 255, 0.1);
+  --clr-input-focus: #10b981;
+  --clr-input-focus-glow: rgba(16, 185, 129, 0.25);
+  
+  --clr-error: #ef4444; /* Red 500 */
+  --clr-error-bg: rgba(239, 68, 68, 0.1);
+  
+  --clr-btn-bg: rgba(30, 41, 59, 0.8);
+  --clr-btn-hover: rgba(51, 65, 85, 0.8);
+  --clr-btn-active: rgba(16, 185, 129, 0.2);
+  
+  --clr-output-card-bg: #0b2521; /* Ultra-dark Emerald */
+  
+  /* Fonts */
+  --ff-primary: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  
+  /* Typography Scale */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-xxl: 2rem;
+  --fs-giant: 3rem;
+  
+  /* Layout & Spacing */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  
+  /* Shadows */
+  --shadow-glow: 0 0 25px rgba(16, 185, 129, 0.15);
+  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
