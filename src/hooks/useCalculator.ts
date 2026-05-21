@@ -78,6 +78,19 @@ export const useCalculator = () => {
     const errs: ValidationErrors = {};
 
     // Validate Bill
+    if (state.bill !== '') {
+      const parsedBill = parseFloat(state.bill);
+      if (isNaN(parsedBill)) {
+        errs.bill = 'Please enter a valid number';
+      } else if (parsedBill <= 0) {
+        errs.bill = 'Bill must be greater than 0';
+      } else if (parsedBill > 10000000) {
+        errs.bill = 'Bill amount cannot exceed 10,000,000';
+      }
+    }
+
+    // Validate Tip %
+    if (state.tipPercent !== '') {
     }
 
     return errs;
