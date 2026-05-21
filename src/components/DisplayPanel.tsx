@@ -1,12 +1,19 @@
 import React from 'react';
 
-export const DisplayPanel: React.FC<any> = ({ totalTip, grandTotal }) => {
+export const DisplayPanel: React.FC<any> = ({ currency, totalTip, grandTotal, perPersonTotal }) => {
   const formatAmount = (val: number) => val.toFixed(2);
-  const getFontSize = (amount: number) => amount > 100000 ? 'small' : 'large';
   return (
     <div className="display-panel">
-      <div className={getFontSize(totalTip)}>Total Tip: {formatAmount(totalTip)}</div>
-      <div className={getFontSize(grandTotal)}>Grand Total: {formatAmount(grandTotal)}</div>
+      <div className="display-outputs-container">
+        <div className="display-row">
+          <span>Tip Amount</span>
+          <span>{currency.symbol}{formatAmount(totalTip)}</span>
+        </div>
+        <div className="display-row">
+          <span>Total Share</span>
+          <span>{currency.symbol}{formatAmount(perPersonTotal)}</span>
+        </div>
+      </div>
     </div>
   );
 };
