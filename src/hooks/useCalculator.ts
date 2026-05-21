@@ -48,7 +48,29 @@ const DEFAULT_STATE: CalculatorState = {
 export const useCalculator = () => {
   const [state, setState] = useState<CalculatorState>(DEFAULT_STATE);
 
+  // Set individual fields
+  const setBill = (val: string) => {
+    setState((prev) => ({ ...prev, bill: val }));
+  };
+
+  const setTipPercent = (val: string, preset: number | null = null) => {
+    setState((prev) => ({
+      ...prev,
+      tipPercent: val,
+      activePreset: preset,
+    }));
+  };
+
+  const setPeople = (val: string) => {
+    setState((prev) => ({ ...prev, people: val }));
+  };
+
+  const setCurrency = (curr: Currency) => {
+    return errs;
+  }, [state.bill, state.tipPercent, state.people]);
+
   return {
     state,
+    errors,
   };
 };
