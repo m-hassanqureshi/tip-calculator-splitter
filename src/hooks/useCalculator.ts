@@ -91,11 +91,27 @@ export const useCalculator = () => {
 
     // Validate Tip %
     if (state.tipPercent !== '') {
+      const parsedTip = parseFloat(state.tipPercent);
+      if (isNaN(parsedTip)) {
+        errs.tipPercent = 'Please enter a valid number';
+      } else if (parsedTip < 0) {
+        errs.tipPercent = 'Tip cannot be negative';
+      } else if (parsedTip > 1000) {
+        errs.tipPercent = 'Tip percentage cannot exceed 1000%';
+      }
     }
 
-    return errs;
-  }, [state.bill, state.tipPercent, state.people]);
-
+    // Validate Number of People
+    if (state.people !== '') {
+      const parsedPeople = parseFloat(state.people);
+      if (isNaN(parsedPeople)) {
+        errs.people = 'Please enter a valid number';
+      } else if (!/^\d+$/.test(state.people)) {
+        // Checks if there are decimals or invalid symbols
+        errs.people = 'Number of people must be a whole number';
+      } else {
+        const intPeople = parseInt(state.people, 10);
+        if (intPeople < 1) {
   return {
     state,
     errors,
