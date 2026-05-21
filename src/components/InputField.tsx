@@ -12,7 +12,10 @@ export const InputField: React.FC<any> = ({ label, id, value, onChange, inputMod
   return (
     <div className="input-field-wrapper">
       <label htmlFor={id}>{label}</label>
-      <input id={id} value={value} onChange={handleChange} />
+      <div className="input-container">
+        <input id={id} value={value} onChange={handleChange} />
+        {value && <button onClick={() => onChange('')}>Clear</button>}
+      </div>
     </div>
   );
 };
